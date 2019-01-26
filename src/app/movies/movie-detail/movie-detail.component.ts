@@ -28,4 +28,8 @@ export class MovieDetailComponent implements OnInit {
   onEditMovie() {
     this.router.navigate(["edit"], { relativeTo: this.route });
   }
+  onDeleteMovie() {
+    this.movieService.deleteMovie(this.id);
+    this.router.navigate(["/movies"]);
+  }
 }

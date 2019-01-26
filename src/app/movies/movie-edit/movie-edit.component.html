@@ -1,3 +1,63 @@
-<p>
-  movie-edit works!
-</p>
+<div class="row">
+  <div class="col-md-12">
+    <form [formGroup]="movieForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="title">Movie title</label>
+        <input
+          type="text"
+          class="form-control"
+          id="title"
+          formControlName="title"
+          aria-describedby="titleHelp"
+          placeholder="Enter movie title"
+        />
+        <small id="titleHelp" class="form-text text-muted"
+          >It suppose to be maximum 100 characters.</small
+        >
+      </div>
+      <div class="form-group">
+        <label for="imagePath">Image URL</label>
+        <input
+          type="text"
+          class="form-control"
+          id="imagePath"
+          formControlName="imagePath"
+          aria-describedby="titleHelp"
+          placeholder="Enter image URL"
+          #imagePathURL
+        />
+        <small id="titleHelp" class="form-text text-muted"
+          >It suppose to be image URL.</small
+        >
+      </div>
+      <div class="form-group">
+        <label for="imagePath">Image Preview</label>
+        <img
+          [src]="imagePathURL.value"
+          alt=""
+          class="img-responsive"
+          style="max-width: 200px;"
+        />
+      </div>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea
+          class="form-control"
+          formControlName="description"
+          id="description"
+          rows="3"
+        ></textarea>
+      </div>
+      <button
+        type="submit"
+        class="btn btn-success"
+        [disabled]="!movieForm.valid"
+      >
+        Save
+      </button>
+      <button type="button" class="btn btn-danger ml-2" (click)="onCancel()">
+        Cancel
+      </button>
+    </form>
+  </div>
+</div>
