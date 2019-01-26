@@ -1,30 +1,17 @@
-import { Component, OnInit, EventEmitter, Input, Output } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { Movie } from "../movie.model";
+import { MovieService } from "../movie.service";
 @Component({
   selector: "app-movie-list",
   templateUrl: "./movie-list.component.html",
   styleUrls: ["./movie-list.component.css"]
 })
 export class MovieListComponent implements OnInit {
-  @Output() movieWasSelected = new EventEmitter<Movie>();
-  movies: Movie[] = [
-    new Movie(
-      "First Movie",
-      "This movie will show the art of tech",
-      "https://pmcvariety.files.wordpress.com/2017/03/spider-man-homecoming.png"
-    ),
-    new Movie(
-      "First Movie 2",
-      "This movie will show the art of tech",
-      "https://pmcvariety.files.wordpress.com/2017/03/spider-man-homecoming.png"
-    )
-  ];
+  movies: Movie[];
 
-  constructor() {}
+  constructor(private movieService: MovieService) {}
 
-  ngOnInit() {}
-
-  onMovieSelected(movie: Movie) {
-    this.movieWasSelected.emit(movie);
+  ngOnInit() {
+    this.movies = this.movieService.getMovie();
   }
 }
