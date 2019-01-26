@@ -1,14 +1,15 @@
-<div class="row mt-4">
+<div class="row">
   <div class="col-md-12">
-    <button class="btn btn-success">New Movie</button>
+    <button class="btn btn-success" (click)="onNewMovie()">New Movie</button>
   </div>
 </div>
 <hr />
 <div class="row">
   <div class="col-md-12">
     <app-movie-item
-      *ngFor="let movieSingle of movies"
+      *ngFor="let movieSingle of movies; let i = index"
       [movie]="movieSingle"
+      [index]="i"
     ></app-movie-item>
   </div>
 </div>

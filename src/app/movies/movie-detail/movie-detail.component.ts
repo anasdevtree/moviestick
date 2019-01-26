@@ -1,6 +1,7 @@
-import { Component, OnInit, Input } from "@angular/core";
-
+import { Component, OnInit } from "@angular/core";
 import { Movie } from "../movie.model";
+import { MovieService } from "../movie.service";
+import { ActivatedRoute, Params, Router } from "@angular/router";
 
 @Component({
   selector: "app-movie-detail",
@@ -8,9 +9,23 @@ import { Movie } from "../movie.model";
   styleUrls: ["./movie-detail.component.css"]
 })
 export class MovieDetailComponent implements OnInit {
-  @Input() movie: Movie;
+  movie: Movie;
+  id: number;
 
-  constructor() {}
+  constructor(
+    private movieService: MovieService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.route.params.subscribe((params: Params) => {
+      this.id = +params["id"];
+      this.movie = this.movieService.getMovie(this.id);
+    });
+  }
+
+  onEditMovie() {
+    this.router.navigate(["edit"], { relativeTo: this.route });
+  }
 }

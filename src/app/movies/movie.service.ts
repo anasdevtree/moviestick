@@ -1,7 +1,5 @@
 import { Movie } from "./movie.model";
-import { EventEmitter } from "@angular/core";
 export class MovieService {
-  movieSelected = new EventEmitter();
   private movies: Movie[] = [
     new Movie(
       "First Movie",
@@ -15,7 +13,10 @@ export class MovieService {
     )
   ];
 
-  getMovie() {
+  getMovies() {
     return this.movies.slice();
+  }
+  getMovie(index: number) {
+    return this.movies[index];
   }
 }

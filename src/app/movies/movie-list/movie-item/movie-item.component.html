@@ -1,4 +1,9 @@
-<a href="#" class="list-group-item clearfix" (click)="onSelected()">
+<a
+  class="list-group-item clearfix"
+  style="cursor:pointer;"
+  [routerLink]="[index]"
+  routerLinkActive="active"
+>
   <div class="float-left">
     <h4 class="list-group-item-heading">{{ movie.title }}</h4>
     <p class="list-group-item-text">{{ movie.description }}</p>

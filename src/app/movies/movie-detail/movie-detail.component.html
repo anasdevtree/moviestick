@@ -27,8 +27,10 @@
         Manage Movie
       </button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" href="#">Edit Movie</a>
-        <a class="dropdown-item" href="#">Delete</a>
+        <a class="dropdown-item" (click)="onEditMovie()" style="cursor:pointer;"
+          >Edit Movie</a
+        >
+        <a class="dropdown-item" style="cursor:pointer;">Delete</a>
       </div>
     </div>
   </div>
