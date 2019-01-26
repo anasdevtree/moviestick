@@ -1,3 +1,15 @@
-<p>
-  movie-list works!
-</p>
+<div class="row mt-4">
+  <div class="col-md-12">
+    <button class="btn btn-success">New Movie</button>
+  </div>
+</div>
+<hr />
+<div class="row">
+  <div class="col-md-12">
+    <app-movie-item
+      *ngFor="let movieSingle of movies"
+      [movie]="movieSingle"
+      (click)="onMovieSelected(movieSingle)"
+    ></app-movie-item>
+  </div>
+</div>
