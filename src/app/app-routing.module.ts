@@ -11,20 +11,6 @@ import { AuthGuard } from "./auth/auth-guard.service";
 
 const appRoutes: Routes = [
   { path: "", component: LandingComponent },
-  {
-    path: "movies",
-    component: MoviesComponent,
-    children: [
-      { path: "", component: MovieLatestComponent },
-      { path: "new", component: MovieEditComponent, canActivate: [AuthGuard] },
-      { path: ":id", component: MovieDetailComponent },
-      {
-        path: ":id/edit",
-        component: MovieEditComponent,
-        canActivate: [AuthGuard]
-      }
-    ]
-  },
   { path: "signup", component: SignupComponent },
   { path: "signin", component: SigninComponent }
 ];
