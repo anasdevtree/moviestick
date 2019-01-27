@@ -14,6 +14,10 @@ import { LandingComponent } from "./layout/landing/landing.component";
 import { MovieLatestComponent } from "./movies/movie-latest/movie-latest.component";
 import { MovieEditComponent } from "./movies/movie-edit/movie-edit.component";
 import { MovieService } from "./movies/movie.service";
+import { HttpClientModule } from "@angular/common/http";
+import { DataStorageService } from "./shared/data-storage.service";
+import { SignupComponent } from "./auth/signup/signup.component";
+import { SigninComponent } from "./auth/signin/signin.component";
 
 @NgModule({
   declarations: [
@@ -26,16 +30,19 @@ import { MovieService } from "./movies/movie.service";
     MovieItemComponent,
     LandingComponent,
     MovieLatestComponent,
-    MovieEditComponent
+    MovieEditComponent,
+    SignupComponent,
+    SigninComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    AppBootstrapModule
+    AppBootstrapModule,
+    HttpClientModule
   ],
-  providers: [MovieService],
+  providers: [MovieService, DataStorageService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

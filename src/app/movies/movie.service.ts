@@ -34,4 +34,8 @@ export class MovieService {
     this.movies.splice(index, 1);
     this.moviesChanged.next(this.movies.slice());
   }
+  setMovies(movies: Movie[]) {
+    this.movies = movies;
+    this.moviesChanged.next(this.movies.slice());
+  }
 }

@@ -5,6 +5,7 @@ import { LandingComponent } from "./layout/landing/landing.component";
 import { MovieLatestComponent } from "./movies/movie-latest/movie-latest.component";
 import { MovieDetailComponent } from "./movies/movie-detail/movie-detail.component";
 import { MovieEditComponent } from "./movies/movie-edit/movie-edit.component";
+import { SignupComponent } from "./auth/signup/signup.component";
 
 const appRoutes: Routes = [
   { path: "", component: LandingComponent },
@@ -17,7 +18,8 @@ const appRoutes: Routes = [
       { path: ":id", component: MovieDetailComponent },
       { path: ":id/edit", component: MovieEditComponent }
     ]
-  }
+  },
+  { path: "signup", component: SignupComponent }
 ];
 
 @NgModule({
