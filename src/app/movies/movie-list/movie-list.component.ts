@@ -4,6 +4,7 @@ import { Movie } from "../movie.model";
 import { MovieService } from "../movie.service";
 import { Router, ActivatedRoute } from "@angular/router";
 import { DataStorageService } from "src/app/shared/data-storage.service";
+import { AuthService } from "../../auth/auth.service";
 @Component({
   selector: "app-movie-list",
   templateUrl: "./movie-list.component.html",
@@ -17,7 +18,8 @@ export class MovieListComponent implements OnInit, OnDestroy {
     private movieService: MovieService,
     private router: Router,
     private route: ActivatedRoute,
-    private dataStorageService: DataStorageService
+    private dataStorageService: DataStorageService,
+    public authService: AuthService
   ) {}
 
   ngOnInit() {

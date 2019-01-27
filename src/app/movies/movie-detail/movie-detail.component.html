@@ -13,7 +13,7 @@
     <h2>{{ movie.title }}</h2>
   </div>
 </div>
-<div class="row">
+<div class="row" *ngIf="authService.isAuthenticated()">
   <div class="col-md-12">
     <div class="dropdown">
       <button

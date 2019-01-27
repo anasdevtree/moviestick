@@ -7,7 +7,6 @@ import { AppComponent } from "./app.component";
 import { HeaderComponent } from "./header/header.component";
 import { DropdownDirective } from "./shared/dropdown.directive";
 import { LandingComponent } from "./layout/landing/landing.component";
-import { MovieLatestComponent } from "./movies/movie-latest/movie-latest.component";
 import { MovieService } from "./movies/movie.service";
 import { HttpClientModule } from "@angular/common/http";
 import { DataStorageService } from "./shared/data-storage.service";
@@ -23,7 +22,6 @@ import { MoviesModule } from "./movies/movies.modules";
     HeaderComponent,
     DropdownDirective,
     LandingComponent,
-    MovieLatestComponent,
     SignupComponent,
     SigninComponent
   ],

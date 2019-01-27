@@ -5,14 +5,14 @@ import { AuthGuard } from "../auth/auth-guard.service";
 import { MovieEditComponent } from "./movie-edit/movie-edit.component";
 import { MovieDetailComponent } from "./movie-detail/movie-detail.component";
 import { MoviesComponent } from "./movies.component";
-import { LandingComponent } from "../layout/landing/landing.component";
+import { MovieLatestComponent } from "./movie-latest/movie-latest.component";
 
 const moviesRoutes: Routes = [
   {
     path: "movies",
     component: MoviesComponent,
     children: [
-      { path: "", component: LandingComponent },
+      { path: "", component: MovieLatestComponent },
       { path: "new", component: MovieEditComponent, canActivate: [AuthGuard] },
       { path: ":id", component: MovieDetailComponent },
       {

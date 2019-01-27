@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row" *ngIf="authService.isAuthenticated()">
   <div class="col-md-12">
     <button class="btn btn-success" (click)="onNewMovie()">New Movie</button>
     <button class="btn btn-success ml-4" (click)="onSaveMovies()">
@@ -9,7 +9,7 @@
     </button>
   </div>
 </div>
-<hr />
+<hr *ngIf="authService.isAuthenticated()" />
 <div class="row">
   <div class="col-md-12">
     <app-movie-item

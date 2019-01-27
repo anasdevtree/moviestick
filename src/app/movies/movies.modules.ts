@@ -7,13 +7,15 @@ import { MovieItemComponent } from "./movie-list/movie-item/movie-item.component
 import { MovieEditComponent } from "./movie-edit/movie-edit.component";
 import { MoviesComponent } from "./movies.component";
 import { MoviesRoutingModule } from "./movies-routing.module";
+import { MovieLatestComponent } from "./movie-latest/movie-latest.component";
 @NgModule({
   declarations: [
     MoviesComponent,
     MovieEditComponent,
     MovieListComponent,
     MovieDetailComponent,
-    MovieItemComponent
+    MovieItemComponent,
+    MovieLatestComponent
   ],
   imports: [ReactiveFormsModule, CommonModule, MoviesRoutingModule]
 })
