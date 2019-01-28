@@ -10,7 +10,7 @@ import { SigninComponent } from "./auth/signin/signin.component";
 import { AuthGuard } from "./auth/auth-guard.service";
 
 const appRoutes: Routes = [
-  { path: "", redirectTo: "/movies/1", pathMatch: "full" },
+  { path: "", redirectTo: "/movies", pathMatch: "full" },
   { path: "register", component: SignupComponent },
   { path: "login", component: SigninComponent }
 ];

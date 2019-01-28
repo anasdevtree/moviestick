@@ -28,7 +28,7 @@ export class MovieListComponent implements OnInit, OnDestroy {
         this.movies = movies;
       }
     );
-    this.movies = this.movieService.getMovies();
+    this.onLoadMovies();
   }
   onNewMovie() {
     this.router.navigate(["new"], { relativeTo: this.route });

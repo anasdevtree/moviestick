@@ -22,11 +22,8 @@ export class DataStorageService {
   }
 
   getMovies() {
-    const token = this.authService.getToken();
     this.httpClient
-      .get<Movie[]>(
-        "https://moviestick-31d4c.firebaseio.com/movies.json?auth=" + token
-      )
+      .get<Movie[]>("https://moviestick-31d4c.firebaseio.com/movies.json")
       .subscribe((movies: Movie[]) => {
         this.movieService.setMovies(movies);
       });
