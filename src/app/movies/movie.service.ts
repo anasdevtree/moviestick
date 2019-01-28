@@ -5,14 +5,24 @@ export class MovieService {
   moviesChanged = new Subject<Movie[]>();
   private movies: Movie[] = [
     new Movie(
-      "First Movie",
-      "This movie will show the art of tech",
+      "Spiderman",
+      "Spider-Man is a fictional superhero created by writer-editor Stan Lee and writer-artist Steve Ditko.",
       "https://pmcvariety.files.wordpress.com/2017/03/spider-man-homecoming.png"
     ),
     new Movie(
-      "First Movie 2",
-      "This movie will show the art of tech",
+      "The Favourite",
+      "The Favourite is a 2018 period comedy-drama film directed by Yorgos Lanthimos and written by Deborah Davis and Tony McNamara.",
+      "https://saltlakefilmsociety.org/images/posters/the-favourite-poster-xl.jpg"
+    ),
+    new Movie(
+      "Spiderman",
+      "Spider-Man is a fictional superhero created by writer-editor Stan Lee and writer-artist Steve Ditko.",
       "https://pmcvariety.files.wordpress.com/2017/03/spider-man-homecoming.png"
+    ),
+    new Movie(
+      "The Favourite",
+      "The Favourite is a 2018 period comedy-drama film directed by Yorgos Lanthimos and written by Deborah Davis and Tony McNamara.",
+      "https://saltlakefilmsociety.org/images/posters/the-favourite-poster-xl.jpg"
     )
   ];
 

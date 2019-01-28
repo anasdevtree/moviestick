@@ -5,7 +5,6 @@ import { AppBootstrapModule } from "./app-bootstrap.module";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { HeaderComponent } from "./header/header.component";
-import { DropdownDirective } from "./shared/dropdown.directive";
 import { LandingComponent } from "./layout/landing/landing.component";
 import { MovieService } from "./movies/movie.service";
 import { HttpClientModule } from "@angular/common/http";
@@ -15,12 +14,13 @@ import { SigninComponent } from "./auth/signin/signin.component";
 import { AuthService } from "./auth/auth.service";
 import { AuthGuard } from "./auth/auth-guard.service";
 import { MoviesModule } from "./movies/movies.modules";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { MaterialsModule } from "./materials/materials.module";
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    DropdownDirective,
     LandingComponent,
     SignupComponent,
     SigninComponent
@@ -32,7 +32,9 @@ import { MoviesModule } from "./movies/movies.modules";
     AppRoutingModule,
     AppBootstrapModule,
     HttpClientModule,
-    MoviesModule
+    MoviesModule,
+    BrowserAnimationsModule,
+    MaterialsModule
   ],
   providers: [MovieService, DataStorageService, AuthService, AuthGuard],
   bootstrap: [AppComponent]

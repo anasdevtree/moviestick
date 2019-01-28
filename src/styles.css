@@ -1,1 +1,13 @@
-/* You can add global styles to this file, and also import other style files */
+.image-container {
+  max-height: 100px;
+  overflow: hidden;
+}
+
+.imageFullContainer {
+  width: 100%;
+  max-height: 377px;
+  overflow: hidden;
+}
+.imageFullContainer > img {
+  width: 100%;
+}

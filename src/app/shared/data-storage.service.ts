@@ -14,8 +14,9 @@ export class DataStorageService {
   ) {}
 
   storeMovies() {
+    const token = this.authService.getToken();
     return this.httpClient.put(
-      "https://moviestick-31d4c.firebaseio.com/movies.json",
+      "https://moviestick-31d4c.firebaseio.com/movies.json?auth=" + token,
       this.movieService.getMovies()
     );
   }

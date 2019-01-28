@@ -1,19 +1,17 @@
-<a
-  class="list-group-item clearfix"
-  style="cursor:pointer;"
+<div
+  class="card float-left mb-2 mr-2"
+  style="width: 12rem;cursor:pointer;"
   [routerLink]="[index]"
   routerLinkActive="active"
 >
-  <div class="float-left">
-    <h4 class="list-group-item-heading">{{ movie.title }}</h4>
-    <p class="list-group-item-text">{{ movie.description }}</p>
-  </div>
-  <span class="float-right">
+  <div class="image-container">
     <img
+      class="card-img-top"
       src="{{ movie.imagePath }}"
       alt="{{ movie.title }}"
-      class="img-responsive"
-      style="max-height: 50px;"
     />
-  </span>
-</a>
+  </div>
+  <div class="card-body">
+    <h6 class="card-title">{{ movie.title }}</h6>
+  </div>
+</div>

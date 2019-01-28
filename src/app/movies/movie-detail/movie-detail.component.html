@@ -1,11 +1,8 @@
-<div class="row">
+<div class="row mb-3">
   <div class="col-md-12">
-    <img
-      src="{{ movie.imagePath }}"
-      alt=""
-      class="img-responsive"
-      style="max-height: 200px;"
-    />
+    <div class="imageFullContainer">
+      <img src="{{ movie.imagePath }}" alt="" class="img-responsive" />
+    </div>
   </div>
 </div>
 <div class="row">
@@ -15,33 +12,15 @@
 </div>
 <div class="row" *ngIf="authService.isAuthenticated()">
   <div class="col-md-12">
-    <div class="dropdown">
-      <button
-        class="btn btn-secondary dropdown-toggle"
-        type="button"
-        id="dropdownMenuButton"
-        data-toggle="dropdown"
-        aria-haspopup="true"
-        aria-expanded="false"
-      >
-        Manage Movie
-      </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" (click)="onEditMovie()" style="cursor:pointer;"
-          >Edit Movie</a
-        >
-        <a
-          class="dropdown-item"
-          (click)="onDeleteMovie()"
-          style="cursor:pointer;"
-          >Delete</a
-        >
-      </div>
-    </div>
+    <button type="button" class="btn btn-success ml-2" (click)="onEditMovie()">
+      Edit Movie
+    </button>
+    <button type="button" class="btn btn-danger ml-2" (click)="onDeleteMovie()">
+      Delete
+    </button>
   </div>
 </div>
 
 <div class="row">
   <div class="col-md-12">{{ movie.description }}</div>
 </div>
-<div class="row"><div class="col-md-12">Date of launch</div></div>
